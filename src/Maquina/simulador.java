@@ -3,15 +3,16 @@ package Maquina;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import Dominio.configuraMaquina;
 import Dominio.tela;
 
 public class simulador {
+	public static final Logger LOGGER = Logger.getLogger(simulador.class.getName());
 
 	public static void main(String[] args) throws InterruptedException, IOException {
-		
-		
+
 		Scanner in = new Scanner(System.in);
 
 		String edMaquinaNome, edMaquinaModelo, edMaquinaVoltagem, edMaquinaCapacidadeKg, edMaquinaLavacaoPesada,
@@ -29,7 +30,7 @@ public class simulador {
 				in.nextLine();
 			} catch (Exception e) {
 				in.next();
-				System.out.println("DIGITE UMA DAS ALTERNATIVAS ABAIXO: ");
+				System.out.println("DIGITE UMA DAS ALTERNATIVAS ABAIXO.: ");
 				continue;
 			}
 			// finally {
@@ -152,57 +153,55 @@ public class simulador {
 							tela.estagio();
 							int etapaProcesso = in.nextInt();
 							in.nextLine();
+							String msgOK = " \n concluído com sucesso!";
+							String msgIni = "Iniciado";
 							switch (etapaProcesso) {
+
 							case 1: {
 								tela.l2();
-								System.out.println("SIMULA��O DO EST�GIO 1  DA MAQUINA " + nMA + " INICIADA");
+								System.out.println("SIMULA��O DO EST�GIO 1  DA MAQUINA " + nMA + msgIni);
 								tela.l1();
 								configuraMaquina.simuladorEstagio1();
 								tela.l1();
-								System.out.println(
-										"Simula��o do est�gio 1 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+								System.out.println("Simula��o do est�gio 1 da MAQUINA " + nMA + msgOK);
 								tela.l2();
 
 							}
 							case 2: {
 								tela.l2();
-								System.out.println("SIMULA��O DO EST�GIO 2 DA MAQUINA " + nMA + " INICIADA");
+								System.out.println("SIMULA��O DO EST�GIO 2 DA MAQUINA " + nMA + msgIni);
 								tela.l1();
 								configuraMaquina.simuladorEstagio2();
 								tela.l1();
-								System.out.println(
-										"Simula��o do est�gio 2 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+								System.out.println("Simula��o do est�gio 2 da MAQUINA " + nMA + msgOK);
 								tela.l2();
 
 							}
 							case 3: {
 								tela.l2();
-								System.out.println("SIMULA��O DO EST�GIO 3 DA MAQUINA " + nMA + " INICIADA");
+								System.out.println("SIMULA��O DO EST�GIO 3 DA MAQUINA " + nMA + msgIni);
 								tela.l1();
 								configuraMaquina.simuladorEstagio3();
 								tela.l1();
-								System.out.println(
-										"Simula��o do est�gio 3 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+								System.out.println("Simula��o do est�gio 3 da MAQUINA " + nMA + msgOK);
 								tela.l2();
 							}
 							case 4: {
 								tela.l2();
-								System.out.println("SIMULA��O DO EST�GIO 4 DA MAQUINA " + nMA + " INICIADA");
+								System.out.println("SIMULA��O DO EST�GIO 4 DA MAQUINA " + nMA + msgIni);
 								tela.l1();
 								configuraMaquina.simuladorEstagio4();
 								tela.l1();
-								System.out.println(
-										"Simula��o do est�gio 4 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+								System.out.println("Simula��o do est�gio 4 da MAQUINA " + nMA + msgOK);
 								tela.l2();
 							}
 							case 5: {
 								tela.l2();
-								System.out.println("SIMULA��O DO EST�GIO 5 DA MAQUINA " + nMA + " INICIADA");
+								System.out.println("SIMULA��O DO EST�GIO 5 DA MAQUINA " + nMA + msgIni);
 								tela.l1();
 								configuraMaquina.simuladorEstagio5();
 								tela.l1();
-								System.out.println(
-										"Simula��o do est�gio 5 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+								System.out.println("Simula��o do est�gio 5 da MAQUINA " + nMA + msgOK);
 								tela.l2();
 							}
 								break;
@@ -225,58 +224,54 @@ public class simulador {
 						String nMA = simulaTodasl.getMaquinaModelo();
 						System.out.println(" A MAQUINA " + nMA + " foi localizada ");
 						tela.l0();
-
+						String msgOK = "concluído com sucesso";
+						String msgIni = "Iniciado";
 						switch (etapaProcessoTodas) {
 						case 1: {
 							tela.l2();
-							System.out.println("SIMULA��O DO EST�GIO 1 DA MAQUINA " + nMA + " INICIADA");
+							System.out.println("SIMULA��O DO EST�GIO 1 DA MAQUINA " + nMA + msgIni);
 							tela.l1();
 							configuraMaquina.simuladorEstagio1();
 							tela.l1();
-							System.out.println(
-									"Simula��o do est�gio 1 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+							System.out.println("Simula��o do est�gio 1 da MAQUINA " + nMA + msgOK);
 							tela.l2();
 
 						}
 						case 2: {
 							tela.l2();
-							System.out.println("SIMULA��O DO EST�GIO 2 DA MAQUINA " + nMA + " INICIADA");
+							System.out.println("SIMULA��O DO EST�GIO 2 DA MAQUINA " + nMA + msgIni);
 							tela.l1();
 							configuraMaquina.simuladorEstagio2();
 							tela.l1();
-							System.out.println(
-									"Simula��o do est�gio 2 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+							System.out.println("Simula��o do est�gio 2 da MAQUINA " + nMA + msgOK);
 							tela.l2();
 
 						}
 						case 3: {
 							tela.l2();
-							System.out.println("SIMULA��O DO EST�GIO 3 DA MAQUINA " + nMA + " INICIADA");
+							System.out.println("SIMULA��O DO EST�GIO 3 DA MAQUINA " + nMA + msgIni);
 							tela.l1();
 							configuraMaquina.simuladorEstagio3();
 							tela.l1();
-							System.out.println(
-									"Simula��o do est�gio 3 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+							System.out.println("Simula��o do est�gio 3 da MAQUINA " + nMA + msgOK);
 							tela.l2();
 						}
 						case 4: {
 							tela.l2();
-							System.out.println("SIMULA��O DO EST�GIO 4 DA MAQUINA " + nMA + " INICIADA");
+							System.out.println("SIMULA��O DO EST�GIO 4 DA MAQUINA " + nMA + msgIni);
 							tela.l1();
 							configuraMaquina.simuladorEstagio4();
 							tela.l1();
-							System.out.println(
-									"Simula��o do est�gio 4 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+							System.out.println("Simula��o do est�gio 4 da MAQUINA " + nMA + msgOK);
 							tela.l2();
 						}
 						case 5: {
 							tela.l2();
-							System.out.println("SIMULA��O DO EST�GIO 5 DA MAQUINA " + nMA + " INICIADA");
+							System.out.println("SIMULA��O DO EST�GIO 5 DA MAQUINA " + nMA + msgIni);
 							tela.l1();
 							configuraMaquina.simuladorEstagio5();
 							tela.l1();
-							System.out.println(
-									"Simula��o do est�gio 5 da MAQUINA " + nMA + " \n conclu�do com sucesso!");
+							System.out.println("Simula��o do est�gio 5 da MAQUINA " + nMA + msgOK);
 							tela.l2();
 						}
 							break;
@@ -318,6 +313,8 @@ public class simulador {
 						tela.tEdicaoMaquina();
 						int swoplm = in.nextInt();
 						in.nextLine();
+						String confirma = "=== CONFIRMA? 1 - Sim   2 - Nao";
+						String duracao = "Duracao Atual: ";
 						switch (swoplm) {
 						case 1: {
 							tela.l2();
@@ -326,7 +323,7 @@ public class simulador {
 							System.out.println("Insira o novo c�digo modelo : " + mM);
 							String novoModelo = in.next();
 							in.nextLine();
-							System.out.println("=== CONFIRMA A ALTERA��O: 1 - Sim   2 - N�o");
+							System.out.println("CONFIRMA ? 1 - Sim   2 - N�o");
 
 							int opConfirma = in.nextInt();
 
@@ -343,11 +340,11 @@ public class simulador {
 							tela.l2();
 							System.out.println("Descri��o do Modelo Atual: " + ucodTemp.getMaquinaNome());
 							tela.l1();
-
+						
 							System.out.println("Insira a nova descri��o de nome: ");
 							String novoNome = in.next();
 							in.nextLine();
-							System.out.println("=== CONFIRMA A ALTERA��O: 1 - Sim   2 - N�o");
+							System.out.println(confirma);
 
 							int opConfirma = in.nextInt();
 
@@ -368,7 +365,7 @@ public class simulador {
 							System.out.println("Insira a nova voltagem: ");
 							String novoVoltagem = in.next();
 							in.nextLine();
-							System.out.println("=== CONFIRMA A ALTERA��O: 1 - Sim   2 - N�o");
+							System.out.println(confirma);
 
 							int opConfirma = in.nextInt();
 
@@ -388,7 +385,7 @@ public class simulador {
 							System.out.println("Insira a nova capacidade de Kg: ");
 							String novoKg = in.next();
 							in.nextLine();
-							System.out.println("=== CONFIRMA A ALTERA��O: 1 - Sim   2 - N�o");
+							System.out.println(confirma);
 
 							int opConfirma = in.nextInt();
 
@@ -403,12 +400,12 @@ public class simulador {
 							tela.l2();
 							System.out.println(" MODO EDI�AO DE Dura��o do Est�gio 1 - Lava��o Pesada " + mM);
 							tela.l2();
-							System.out.println("Dura��o Atual: " + ucodTemp.getMaquinaLavacaoPesada());
+							System.out.println(duracao + ucodTemp.getMaquinaLavacaoPesada());
 							tela.l1();
 							System.out.println("Insira a nova dura��o Estagio 1: ");
 							String novoEstagioUm = in.next();
 							in.nextLine();
-							System.out.println("=== CONFIRMA A ALTERA��O: 1 - Sim   2 - N�o");
+							System.out.println(confirma);
 
 							int opConfirma = in.nextInt();
 
@@ -428,7 +425,7 @@ public class simulador {
 							System.out.println("Insira a nova dura��o Estagio 2: ");
 							String novoEstagioDois = in.next();
 							in.nextLine();
-							System.out.println("=== CONFIRMA A ALTERA��O: 1 - Sim   2 - N�o");
+							System.out.println(confirma);
 
 							int opConfirma = in.nextInt();
 
@@ -448,7 +445,7 @@ public class simulador {
 							System.out.println("Insira a nova dura��o Estagio 3: ");
 							String novoEstagioTres = in.next();
 							in.nextLine();
-							System.out.println("=== CONFIRMA A ALTERA��O: 1 - Sim   2 - N�o");
+							System.out.println(confirma);
 
 							int opConfirma = in.nextInt();
 
@@ -463,12 +460,12 @@ public class simulador {
 							tela.l2();
 							System.out.println(" MODO EDI�AO DE Dura��o do Est�gio 4 - Enxague " + mM);
 							tela.l2();
-							System.out.println("Dura��o Atual: " + ucodTemp.getMaquinaEnxague());
+							System.out.println(duracao + ucodTemp.getMaquinaEnxague());
 							tela.l1();
 							System.out.println("Insira a nova dura��o Estagio 4: ");
 							String novoEstagioQuatro = in.next();
 							in.nextLine();
-							System.out.println("=== CONFIRMA A ALTERA��O: 1 - Sim   2 - N�o");
+							System.out.println(confirma);
 
 							int opConfirma = in.nextInt();
 
@@ -483,12 +480,12 @@ public class simulador {
 							tela.l2();
 							System.out.println(" MODO EDI�AO DE Dura��o do Est�gio 5 - Centrifuga " + mM);
 							tela.l2();
-							System.out.println("Dura��o Atual: " + ucodTemp.getMaquinaCentrifuga());
+							System.out.println(duracao + ucodTemp.getMaquinaCentrifuga());
 							tela.l1();
 							System.out.println("Insira a nova dura��o Estagio 5: ");
 							String novoEstagioCinco = in.next();
 							in.nextLine();
-							System.out.println("=== CONFIRMA A ALTERA��O: 1 - Sim   2 - N�o");
+							System.out.println(confirma);
 
 							int opConfirma = in.nextInt();
 
@@ -530,14 +527,15 @@ public class simulador {
 
 			} // fim do case 4 MENU
 			case 99999: {
-				
-			        for (int rodamaquina = 0; rodamaquina < 5; rodamaquina++) {
-				
-				configuraMaquina registromodelo = new configuraMaquina("Modelo"+rodamaquina, Integer.toString(rodamaquina), "Voltagem"+rodamaquina,
-						"Capacidade "+rodamaquina, "Pesada"+rodamaquina, "Normal"+rodamaquina, "LavacaoLeve"+rodamaquina,
-						"Enxague"+rodamaquina, "Centrifuga"+rodamaquina);
 
-				configura.add(registromodelo);
+				for (int rodamaquina = 0; rodamaquina < 5; rodamaquina++) {
+
+					configuraMaquina registromodelo = new configuraMaquina("Modelo" + rodamaquina,
+							Integer.toString(rodamaquina), "Voltagem" + rodamaquina, "Capacidade " + rodamaquina,
+							"Pesada" + rodamaquina, "Normal" + rodamaquina, "LavacaoLeve" + rodamaquina,
+							"Enxague" + rodamaquina, "Centrifuga" + rodamaquina);
+
+					configura.add(registromodelo);
 				}
 				tela.l1();
 
@@ -550,6 +548,4 @@ public class simulador {
 		} // fim while MENU
 	}
 
-	
-	
 }
